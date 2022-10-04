@@ -1,0 +1,27 @@
+{
+  "name": "knex-with-2-tables",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^15.0.2",
+    "chalk": "^4.1.1",
+    "date-fns": "^2.21.1",
+    "knex": "0.21.5",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.7",
+    "rimraf": "3.0.2",
+    "rxjs": "7.5.6",
+    "got": "11.8.0"
+  },
+  "scripts": {
+    "start": "yarn run build && node ./dist/index.js",
+    "build": "yarn run clean && tsc",
+    "init-db": "yarn run build && node ./dist/initdb.js",
+    "start:watch": "nodemon --watch './src' -e ts --exec 'yarn run start'",
+    "clean": "rimraf ./dist"
+  },
+  "devDependencies": {
+    "typescript": "^4.2.4"
+  }
+}
